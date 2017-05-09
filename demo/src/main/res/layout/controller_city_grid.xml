@@ -4,17 +4,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingStart="0dp"
     android:paddingEnd="@dimen/activity_horizontal_margin"
     android:gravity="center_horizontal"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="0dp"
     android:orientation="vertical" >
+    <!--Transition for the first item in RecyclerView would work if there would be at least 1dp of padding at Top or/and Start -->
+    <!--same works with margin in addition to marginEnd-->
 
     <ImageView
         android:id="@+id/img_dot"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:src="@drawable/circle"
+        android:visibility="gone"
         />
 
     <TextView
@@ -23,13 +26,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:visibility="gone"
         />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="0dp"
         />
+        <!-- applying margin and padding here or adding any sibling on top of this has the same effect -->
 
 </LinearLayout>
